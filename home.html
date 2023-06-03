@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onload="createTable()">
+    <script src="script.js"></script>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <img src="Assets/game2.png" alt="Logo" class="logo-image">
+                </a>
+            </div>
+            <ul class="nav-links" style="cursor: pointer;">
+                <li><a class="nav-item" id="games-toggle" href="#" onclick="togglePage('games')" style="color: blue">Games</a></li>
+                <li><a class="nav-item" id="apps-toggle" href="#" onclick="togglePage('apps')">Apps</a></li>
+                <li><a class="nav-item" id="kids-toggle" href="#" onclick="togglePage('kids')">Kids</a></li>
+            </ul>
+            <form action="#" method="get" class="search-form">
+                <i class="fas fa-search "></i>
+                <input type="text" name="search" placeholder="Search" class="search-input">
+            </form>
+            <div class="user-menu">
+                <a href="#">
+                    <img src="Assets/Kim.jpg" alt="User Avatar" class="avatar-image" id="avatar">
+                </a>
+                <div class="dropdown">
+                    <ul>
+                        <li onclick="move('terms.html')">Terms and Conditions</li>
+                        <hr class="divider">
+                        <li onclick="move('index.html')">Log Out</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <main>
+        <div class="welcome-container" id="welcome-container" style>
+            <div class="welcome-container2">
+                <div id="welcome-text">Welcome back Kim Jong UwU</div>
+                <div class="game-achieved" onclick="move('played.html')">
+                    <div id="f40">69000</div>
+                    <div>Played</div>
+                </div>
+                <div class="game-achieved" onclick="move('purchased.html')">
+                    <div id="f40">42000</div>
+                    <div>Purchased</div>
+                </div>
+                <div class="game-achieved" onclick="move('wishlist.html')">
+                    <div id="f40">10000</div>
+                    <div>On Wishlist</div>
+                </div>
+            </div>
+            <hr class="divider">
+        </div>
+        <!-- games -->
+        <div style="display: block;" id="games">
+            <div style="padding-left: 20px;">
+                <h1 class="singin-text-title">
+                    Explore games by genres
+                </h1>
+                <p class="text-desc">
+                    Unlock Limitless Fun: Explore, Discover, Play!
+                </p>
+                <h3 class="text-desc">
+                    Search by genre
+                </h3>
+                <div class="genres">
+                    <div class="genre" id="rpg-toggle" onclick="topGenreRanking('rpg')"
+                        style="border: 3px solid #2196f3;">
+                        RPG
+                    </div>
+                    <div class="genre" id="4x-toggle" onclick="topGenreRanking('4x')">
+                        Arcade
+                    </div>
+                    <div class="genre" id="simulation-toggle" onclick="topGenreRanking('simulation')">
+                        Action
+                    </div>
+                    <div class="genre" id="single-player-toggle" onclick="topGenreRanking('single-player')">
+                        Adventure
+                    </div>
+                    <div class="genre" id="multiplayer-toggle" onclick="topGenreRanking('multiplayer')">
+                        Fighting
+                    </div>
+                    <button class="genre more-or-less">
+                        More
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="genre-ranking-charts" style="padding-left: 10px;">
+                <!-- genre rpg -->
+                <table class="genre-ranking-table" id="rpg" style="display: table;cursor: pointer;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/app/SealM.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Seal M</td>
+                        <td>PLAYWITH Inc.</td>
+                        <td>Android,Ios,Windows <br>2.8★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/app/ROGlobal.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Ragnarok Origin Global</td>
+                        <td>Gravity Game Hub</td>
+                        <td>Android,Ios,Windows<br>4.8★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/app/LineageW.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Lineage W</td>
+                        <td>INCSOFT</td>
+                        <td>Android,Ios<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/app/GodsnDemons.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Gods and Demons : Legend</td>
+                        <td>Tianzong information technology</td>
+                        <td>Android<br>4.0★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/app/KingsChoice.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>king`s choice</td>
+                        <td>ONEMT</td>
+                        <td>Android,Ios<br>4.9★</td>
+                    </tr>
+                </table>
+                <!-- genre Action -->
+                <table class="genre-ranking-table" id="simulation" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/action/pubg.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>pubg mobile</td>
+                        <td>level infinite</td>
+                        <td>android,ios,windows <br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/action/mole.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>mlbb</td>
+                        <td>Moonton</td>
+                        <td>android,ios,windows<br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/action/aov.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Garena AOV</td>
+                        <td>MOBA Games Private Limited</td>
+                        <td>android,ios,windows<br>4.2★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/action/mecharena.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Mech Arena</td>
+                        <td>Plarium Global Ltd</td>
+                        <td>android,ios,windows<br>3.2★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/action/stickman.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Stickman Warriors</td>
+                        <td>SkySoft Studio</td>
+                        <td>android,ios ,windows<br>4.6★</td>
+                    </tr>
+                </table>
+                <!-- genre adventure -->
+                <table class="genre-ranking-table" id="single-player" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/Adventure/honkaistarrail.jpg" alt="cover photos"
+                                class="genre-app-image" />
+                        </td>
+                        <td>Honkai : Star-rail</td>
+                        <td>cognosphere pte,ltd.</td>
+                        <td>android,ios,windows <br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/Adventure/roblox.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Roblox</td>
+                        <td>Roblox Corporation</td>
+                        <td>android,ios,windows<br>3.8★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/Adventure/genshin.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td> Genshin impact</td>
+                        <td>COGNOSPHERE PTE, Ltd</td>
+                        <td>android,ios,windows<br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/Adventure/ninjaArashi.png" alt="cover photos" class="genre-app-image" />
+                        </td>
+                        <td>Ninja Arashi</td>
+                        <td>Black Panther</td>
+                        <td>android,ios,windows<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/Adventure/gtactm.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>GTA Craft Theft Mod for MCPE</td>
+                        <td>OjalaGames Studio</td>
+                        <td>android,ios,windows<br>3.0★</td>
+                    </tr>
+                </table>
+                <!-- genre Arcade -->
+                <table class="genre-ranking-table" id="4x" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/arcade/subway.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>subway surfer</td>
+                        <td>SYBO games</td>
+                        <td>android,ios,windows <br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/arcade/templeRun.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Temple Run</td>
+                        <td>Imangi Studios</td>
+                        <td>android,ios,windows<br>4.7★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/arcade/fruitNinja.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Fruit Ninja</td>
+                        <td>Halfbrick Studios</td>
+                        <td>android,ios,windows<br>4.7★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/arcade/sonic.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Sonic dash - endless running</td>
+                        <td>SEGA</td>
+                        <td>android,ios,windows<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/arcade/slendrina.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Slendrina:The Cellar</td>
+                        <td>DVlopers</td>
+                        <td>android,ios,windows<br>4.1★</td>
+                    </tr>
+                </table>
+                <!-- genre fighting -->
+                <table class="genre-ranking-table" id="multiplayer" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/fighting/shadowfight.png" alt="cover photos" class="genre-app-image" />
+                        </td>
+                        <td>Shadow Fight 3</td>
+                        <td>NEKKI</td>
+                        <td>iOS,Android <br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/fighting/injustice.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Injustice 2</td>
+                        <td>Warner Bros. International Enterprises</td>
+                        <td>iOS,Android<br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/fighting/mkmobile.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Mortal Kombat Mobile</td>
+                        <td>Warner Bros. International Enterprises</td>
+                        <td>iOS,Android<br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/fighting/punchhero.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Punch Hero</td>
+                        <td>GAMEVIL</td>
+                        <td>iOS,Android<br>4.2★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/fighting/mcoc.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Marvel Contest of Champions</td>
+                        <td>Kabam Games, Inc.</td>
+                        <td>iOS,Android<br>4.3★</td>
+                    </tr>
+                </table>
+                <div class="view-more">view more</div>
+            </div>
+            </div>
+            <!-- Apps -->
+        <div style="display: none;" id="apps">
+            <div style="padding-left: 20px;">
+                <h1 class="singin-text-title">
+                    Explore Apps 
+                </h1>
+                <p class="text-desc">
+                    Enhance your productivity
+                </p>
+                <h3 class="text-desc">
+                    Search by genre
+                </h3>
+                <div class="genres">
+                    <div class="genre" id="rpg1-toggle" onclick="topGenreRanking('rpg1')"
+                        style="border: 3px solid #2196f3;">
+                        Educational
+                    </div>
+                    <div class="genre" id="4x1-toggle" onclick="topGenreRanking('4x1')">
+                        Learn a Language
+                    </div>
+                    <div class="genre" id="simulation1-toggle" onclick="topGenreRanking('simulation1')">
+                        Recommended for you
+                    </div>
+                    <div class="genre" id="single-player1-toggle" onclick="topGenreRanking('single-player1')">
+                        Popular Apps
+                    </div>
+                    <div class="genre" id="multiplayer1-toggle" onclick="topGenreRanking('multiplayer1')">
+                        Premium Apps
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="genre-ranking-charts" style="padding-left: 10px;">
+                <!-- genre rpg -->
+                <table class="genre-ranking-table" id="rpg1" style="display: table;cursor: pointer;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/app/SealM.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Seal M</td>
+                        <td>PLAYWITH Inc.</td>
+                        <td>Android,Ios,Windows <br>2.8★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/app/ROGlobal.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Ragnarok Origin Global</td>
+                        <td>Gravity Game Hub</td>
+                        <td>Android,Ios,Windows<br>4.8★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/app/LineageW.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Lineage W</td>
+                        <td>INCSOFT</td>
+                        <td>Android,Ios<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/app/GodsnDemons.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Gods and Demons : Legend</td>
+                        <td>Tianzong information technology</td>
+                        <td>Android<br>4.0★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/app/KingsChoice.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>king`s choice</td>
+                        <td>ONEMT</td>
+                        <td>Android,Ios<br>4.9★</td>
+                    </tr>
+                </table>
+                <!-- genre Action -->
+                <table class="genre-ranking-table" id="simulation1" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/action/pubg.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>pubg mobile</td>
+                        <td>level infinite</td>
+                        <td>android,ios,windows <br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/action/mole.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>mlbb</td>
+                        <td>Moonton</td>
+                        <td>android,ios,windows<br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/action/aov.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Garena AOV</td>
+                        <td>MOBA Games Private Limited</td>
+                        <td>android,ios,windows<br>4.2★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/action/mecharena.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Mech Arena</td>
+                        <td>Plarium Global Ltd</td>
+                        <td>android,ios,windows<br>3.2★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/action/stickman.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Stickman Warriors</td>
+                        <td>SkySoft Studio</td>
+                        <td>android,ios ,windows<br>4.6★</td>
+                    </tr>
+                </table>
+                <!-- genre adventure -->
+                <table class="genre-ranking-table" id="single-player1" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/Adventure/honkaistarrail.jpg" alt="cover photos"
+                                class="genre-app-image" />
+                        </td>
+                        <td>Honkai : Star-rail</td>
+                        <td>cognosphere pte,ltd.</td>
+                        <td>android,ios,windows <br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/Adventure/roblox.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Roblox</td>
+                        <td>Roblox Corporation</td>
+                        <td>android,ios,windows<br>3.8★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/Adventure/genshin.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td> Genshin impact</td>
+                        <td>COGNOSPHERE PTE, Ltd</td>
+                        <td>android,ios,windows<br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/Adventure/ninjaArashi.png" alt="cover photos" class="genre-app-image" />
+                        </td>
+                        <td>Ninja Arashi</td>
+                        <td>Black Panther</td>
+                        <td>android,ios,windows<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/Adventure/gtactm.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>GTA Craft Theft Mod for MCPE</td>
+                        <td>OjalaGames Studio</td>
+                        <td>android,ios,windows<br>3.0★</td>
+                    </tr>
+                </table>
+                <!-- genre Arcade -->
+                <table class="genre-ranking-table" id="4x1" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/arcade/subway.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>subway surfer</td>
+                        <td>SYBO games</td>
+                        <td>android,ios,windows <br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/arcade/templeRun.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Temple Run</td>
+                        <td>Imangi Studios</td>
+                        <td>android,ios,windows<br>4.7★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/arcade/fruitNinja.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Fruit Ninja</td>
+                        <td>Halfbrick Studios</td>
+                        <td>android,ios,windows<br>4.7★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/arcade/sonic.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Sonic dash - endless running</td>
+                        <td>SEGA</td>
+                        <td>android,ios,windows<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/arcade/slendrina.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Slendrina:The Cellar</td>
+                        <td>DVlopers</td>
+                        <td>android,ios,windows<br>4.1★</td>
+                    </tr>
+                </table>
+                <!-- genre fighting -->
+                <table class="genre-ranking-table" id="multiplayer1" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/fighting/shadowfight.png" alt="cover photos" class="genre-app-image" />
+                        </td>
+                        <td>Shadow Fight 3</td>
+                        <td>NEKKI</td>
+                        <td>iOS,Android <br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/fighting/injustice.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Injustice 2</td>
+                        <td>Warner Bros. International Enterprises</td>
+                        <td>iOS,Android<br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/fighting/mkmobile.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Mortal Kombat Mobile</td>
+                        <td>Warner Bros. International Enterprises</td>
+                        <td>iOS,Android<br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/fighting/punchhero.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Punch Hero</td>
+                        <td>GAMEVIL</td>
+                        <td>iOS,Android<br>4.2★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/fighting/mcoc.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Marvel Contest of Champions</td>
+                        <td>Kabam Games, Inc.</td>
+                        <td>iOS,Android<br>4.3★</td>
+                    </tr>
+                </table>
+                <div class="view-more">view more</div>
+            </div>
+        </div>
+                <!-- Kids -->
+        <div style="display: none;" id="kids">
+            <div style="padding-left: 20px;">
+                <h1 class="singin-text-title">
+                    Fun and educational apps for kids
+                </h1>
+                <p class="text-desc">
+                    explore family friendly games
+                </p>
+                <h3 class="text-desc">
+                    Search by genre
+                </h3>
+                <div class="genres">
+                    <div class="genre" id="rpg2-toggle" onclick="topGenreRanking('rpg2')"
+                        style="border: 3px solid #2196f3;">
+                        Age up to 5
+                    </div>
+                    <div class="genre" id="4x2-toggle" onclick="topGenreRanking('4x2')">
+                        Ages 6-8
+                    </div>
+                    <div class="genre" id="simulation2-toggle" onclick="topGenreRanking('simulation2')">
+                        Ages 9-12
+                    </div>
+                    <div class="genre" id="single-player2-toggle" onclick="topGenreRanking('single-player2')">
+                        Ages up to 12
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="genre-ranking-charts" style="padding-left: 10px;">
+                <!-- genre rpg -->
+                <table class="genre-ranking-table" id="rpg2" style="display: table;cursor: pointer;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/app/SealM.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Seal M</td>
+                        <td>PLAYWITH Inc.</td>
+                        <td>Android,Ios,Windows <br>2.8★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/app/ROGlobal.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Ragnarok Origin Global</td>
+                        <td>Gravity Game Hub</td>
+                        <td>Android,Ios,Windows<br>4.8★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/app/LineageW.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Lineage W</td>
+                        <td>INCSOFT</td>
+                        <td>Android,Ios<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/app/GodsnDemons.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Gods and Demons : Legend</td>
+                        <td>Tianzong information technology</td>
+                        <td>Android<br>4.0★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/app/KingsChoice.jpeg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>king`s choice</td>
+                        <td>ONEMT</td>
+                        <td>Android,Ios<br>4.9★</td>
+                    </tr>
+                </table>
+                <!-- genre Action -->
+                <table class="genre-ranking-table" id="simulation2" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/action/pubg.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>pubg mobile</td>
+                        <td>level infinite</td>
+                        <td>android,ios,windows <br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/action/mole.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>mlbb</td>
+                        <td>Moonton</td>
+                        <td>android,ios,windows<br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/action/aov.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Garena AOV</td>
+                        <td>MOBA Games Private Limited</td>
+                        <td>android,ios,windows<br>4.2★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/action/mecharena.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Mech Arena</td>
+                        <td>Plarium Global Ltd</td>
+                        <td>android,ios,windows<br>3.2★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/action/stickman.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Stickman Warriors</td>
+                        <td>SkySoft Studio</td>
+                        <td>android,ios ,windows<br>4.6★</td>
+                    </tr>
+                </table>
+                <!-- genre adventure -->
+                <table class="genre-ranking-table" id="single-player2" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/Adventure/honkaistarrail.jpg" alt="cover photos"
+                                class="genre-app-image" />
+                        </td>
+                        <td>Honkai : Star-rail</td>
+                        <td>cognosphere pte,ltd.</td>
+                        <td>android,ios,windows <br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/Adventure/roblox.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Roblox</td>
+                        <td>Roblox Corporation</td>
+                        <td>android,ios,windows<br>3.8★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/Adventure/genshin.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td> Genshin impact</td>
+                        <td>COGNOSPHERE PTE, Ltd</td>
+                        <td>android,ios,windows<br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/Adventure/ninjaArashi.png" alt="cover photos" class="genre-app-image" />
+                        </td>
+                        <td>Ninja Arashi</td>
+                        <td>Black Panther</td>
+                        <td>android,ios,windows<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/Adventure/gtactm.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>GTA Craft Theft Mod for MCPE</td>
+                        <td>OjalaGames Studio</td>
+                        <td>android,ios,windows<br>3.0★</td>
+                    </tr>
+                </table>
+                <!-- genre Arcade -->
+                <table class="genre-ranking-table" id="4x2" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/arcade/subway.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>subway surfer</td>
+                        <td>SYBO games</td>
+                        <td>android,ios,windows <br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/arcade/templeRun.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Temple Run</td>
+                        <td>Imangi Studios</td>
+                        <td>android,ios,windows<br>4.7★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/arcade/fruitNinja.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Fruit Ninja</td>
+                        <td>Halfbrick Studios</td>
+                        <td>android,ios,windows<br>4.7★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/arcade/sonic.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Sonic dash - endless running</td>
+                        <td>SEGA</td>
+                        <td>android,ios,windows<br>4.6★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/arcade/slendrina.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Slendrina:The Cellar</td>
+                        <td>DVlopers</td>
+                        <td>android,ios,windows<br>4.1★</td>
+                    </tr>
+                </table>
+                <!-- genre fighting -->
+                <table class="genre-ranking-table" id="multiplayer2" style="display: none;">
+                    <tr>
+                        <th>rank</th>
+                        <th>image</th>
+                        <th>name</th>
+                        <th>publishers</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>1st</td>
+                        <td> <img src="Assets/fighting/shadowfight.png" alt="cover photos" class="genre-app-image" />
+                        </td>
+                        <td>Shadow Fight 3</td>
+                        <td>NEKKI</td>
+                        <td>iOS,Android <br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>2nd</td>
+                        <td> <img src="Assets/fighting/injustice.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Injustice 2</td>
+                        <td>Warner Bros. International Enterprises</td>
+                        <td>iOS,Android<br>4.4★</td>
+                    </tr>
+                    <tr>
+                        <td>3rd</td>
+                        <td> <img src="Assets/fighting/mkmobile.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Mortal Kombat Mobile</td>
+                        <td>Warner Bros. International Enterprises</td>
+                        <td>iOS,Android<br>4.5★</td>
+                    </tr>
+                    <tr>
+                        <td>4th</td>
+                        <td> <img src="Assets/fighting/punchhero.jpg" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Punch Hero</td>
+                        <td>GAMEVIL</td>
+                        <td>iOS,Android<br>4.2★</td>
+                    </tr>
+                    <tr>
+                        <td>5th</td>
+                        <td> <img src="Assets/fighting/mcoc.png" alt="cover photos" class="genre-app-image" /></td>
+                        <td>Marvel Contest of Champions</td>
+                        <td>Kabam Games, Inc.</td>
+                        <td>iOS,Android<br>4.3★</td>
+                    </tr>
+                </table>
+                <div class="view-more">view more</div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <hr class="divider">
+        <div class="footer-container">
+            <div class="footer-text">
+                logo © 2023
+            </div>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/">
+                    <img class="footer-item" id="youtube" src="Assets/youtube.png" alt="youtube">
+                </a>
+                <a href="https://twitter.com/">
+                    <img class="footer-item" id="twitter" src="Assets/twitter.png" alt="twitter">
+                </a>
+                <div>
+                    <a href="https://web.facebook.com/">
+                        <img class="footer-item" id="instagram" src="Assets/instagram.png" alt="instagram">
+                    </a>
+                    <div>
+                    </div>
+    </footer>
+</body>
+
+</html>

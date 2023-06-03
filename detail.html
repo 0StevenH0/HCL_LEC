@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="goback">
+        <div class="goback-button" id="back-button" style="background-color: none;cursor: pointer;">
+          &larr; Go back</div>
+      </header>
+    <main>
+        <div id="view-detail">
+            <img src="" alt="" id="detail-img">
+            <div id="view-info">
+                <div style="font-size:40px; font-weight:bold" id="detail-title"> </div>
+                <div id="detail-publisher"> </div>
+                <div id="detail-genre"> </div>
+                <div id="detail-device"> </div>
+                <div id="detail-rating"> </div>
+                <div class="side">
+                    <button class="install-button"> install </button>
+                    <div class="wishlist" onclick="toggleWishlist();">
+                        <img src="wish_list_1.png" alt="" id="wishlist-image">
+                        Add to wishlist
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            var urlParams = new URLSearchParams(window.location.search);
+            var rowData = JSON.parse(urlParams.get('data'));
+            var main = document.getElementById('view-detail');
+            var img = document.getElementById('detail-img');
+            img.src = rowData["image"];
+            var title = document.getElementById('detail-title');
+            var publisher = document.getElementById('detail-publisher');
+            var genre = document.getElementById('detail-genre');
+            var device = document.getElementById('detail-device');
+            var rating = document.getElementById('detail-rating');
+            title.innerHTML = rowData["title"];
+            publisher.innerHTML = rowData["publisher"];
+            genre.innerHTML = rowData["genre"];
+            device.innerHTML = rowData["device"];
+            rating.innerHTML = rowData["rating"];
+        </script>
+    </main>
+    <footer>
+        <hr class="divider">
+        <div class="footer-container">
+            <div class="footer-text">
+                logo © 2023
+            </div>
+            <div class="footer-links">
+                <a href="https://www.youtube.com/">
+                    <img class="footer-item" id="youtube" src="Assets/youtube.png" alt="youtube">
+                </a>
+                <a href="https://twitter.com/">
+                    <img class="footer-item" id="twitter" src="Assets/twitter.png" alt="twitter">
+                </a>
+                <div>
+                    <a href="https://web.facebook.com/">
+                        <img class="footer-item" id="instagram" src="Assets/instagram.png" alt="instagram">
+                    </a>
+                    <div>
+                    </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

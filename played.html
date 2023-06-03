@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <script src="script.js"></script>
+  <header class="goback">
+    <a href="home.html" class="goback-button">
+      &larr; Back to Home</a>
+  </header>
+  <main>
+    <table style="display: table;cursor: pointer;" id="list-table">
+      <tr>
+        <th></th>
+        <th></th>
+      </tr>
+    </table>
+    <script>
+
+      var l = [];
+      $(document).ready(function () {
+        $.ajax({
+          url: 'game_csv2.csv',
+          dataType: 'text',
+          success: function (data) {
+            var wishlistData = processData(data);
+            generateTable(wishlistData);
+          }
+        });
+      });
+
+      function processData(allText) {
+        var allTextLines = allText.split(/\r\n|\n/);
+        var headers = allTextLines[0].split(',');
+        var lines = [];
+
+        for (var i = 1; i < allTextLines.length; i++) {
+          var data = allTextLines[i].split(',');
+          if (data.length === headers.length) {
+            var line = [];
+            for (var j = 0; j < headers.length; j++) {
+              line.push(data[j]);
+            }
+            lines.push(line);
+          }
+        }
+        return lines;
+      }
+
+      function generateTable(data) {
+        var table = document.getElementById('list-table');
+        for (var i = 0; i < data.length; i++) {
+          var temp_json = {}
+          var row = document.createElement('tr');
+          temp_json.genre = data[i][0];
+          for (var j = 0; j < data[i].length; j++) {
+            if (j === 2) {
+              var cell = document.createElement("td")
+              var img = document.createElement('img');
+              // img.classList.add("genre-app-image");
+              img.src = data[i][j];
+              temp_json.image = data[i][j];
+              img.style.width = '300px';
+              cell.appendChild(img);
+              row.appendChild(cell);
+            } else if (j === 3) {
+              var cell_ = document.createElement("td");
+              var temp = document.createElement("p");
+              temp.innerHTML = data[i][j];
+              temp.style.fontSize = '40px';
+              temp.style.fontWeight = "bold";
+              cell_.append(temp);
+              temp_json.title = data[i][j];
+
+            } else if (j === 4 || j === 5 || j === 6) {
+              cell_.innerHTML = cell_.innerHTML + data[i][j] + "<br><br>";
+              if (j === 4) {
+                temp_json.publisher = data[i][j];
+              } else if (j == 5) {
+                temp_json.device = data[i][j];
+              } else {
+                temp_json.rating = data[i][j];
+              }
+            }
+          }
+          var finJson = JSON.stringify(temp_json);
+          l.push(finJson);
+          attachClickListener(row, i, l[i]);
+          row.append(cell_);
+          table.appendChild(row);
+        }
+      }
+      function attachClickListener(row, index, jsonData) {
+        row.addEventListener("click", function () {
+          window.location.href = 'detail.html?data=' + jsonData;
+        });
+      }
+    </script>
+  </main>
+  <footer>
+    <hr class="divider">
+    <div class="footer-container">
+      <div class="footer-text">
+        logo © 2023
+      </div>
+      <div class="footer-links">
+        <a href="https://www.youtube.com/">
+          <img class="footer-item" id="youtube" src="Assets/youtube.png" alt="youtube">
+        </a>
+        <a href="https://twitter.com/">
+          <img class="footer-item" id="twitter" src="Assets/twitter.png" alt="twitter">
+        </a>
+        <div>
+          <a href="https://web.facebook.com/">
+            <img class="footer-item" id="instagram" src="Assets/instagram.png" alt="instagram">
+          </a>
+          <div>
+          </div>
+  </footer>
+</body>
+
+</html>
